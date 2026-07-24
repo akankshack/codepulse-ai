@@ -1,29 +1,25 @@
 /**
  * @file express.d.ts
- * @description Custom TypeScript type definitions extending Express Request interface.
+ * @description Express Request interface type augmentation.
  * 
  * PURPOSE:
- * Express Request by default does not contain custom properties like `user`.
- * This declaration file extends Express's global Request interface to type-safely attach
- * authenticated user information (`req.user`) populated by authentication middlewares in Module 2.
+ * Augments the Express Request interface to include a type-safe `user` property.
+ * Using module augmentation for 'express-serve-static-core' ensures compatibility
+ * across both tsc and ts-node without compiler declaration resolution issues.
  * 
  * ROLE IN REQUEST FLOW:
- * Activated whenever `req.user` is accessed inside any Express middleware or controller.
+ * Automatically merges the `user` property into the Express Request type,
+ * accessible throughout controllers, services, and middlewares.
  */
 
-declare global {
-  namespace Express {
-    interface Request {
-      /**
-       * User payload attached by authentication middleware upon successful JWT verification.
-       */
-      user?: {
-        id: string;
-        email: string;
-        role: 'ADMIN' | 'DEVELOPER' | 'LEAD';
-      };
-    }
+import 'express';
+
+declare module 'express-serve-static-core' {
+  interface Request {
+    user?: {
+      id: string;
+      email: string;
+      role: 'ADMIN' | 'DEVELOPER' | 'LEAD';
+    };
   }
 }
-
-export {};
