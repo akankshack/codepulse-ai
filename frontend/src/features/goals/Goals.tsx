@@ -10,7 +10,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Ca
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { Spinner } from '../../components/ui/Spinner';
-import { Target, Plus, Award, Calendar, CheckCircle } from 'lucide-react';
+import { Target, Plus, Calendar, CheckCircle } from 'lucide-react';
 
 export const Goals: React.FC = () => {
   const queryClient = useQueryClient();

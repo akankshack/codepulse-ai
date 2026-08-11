@@ -11,7 +11,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Ca
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { Spinner } from '../../components/ui/Spinner';
-import { CheckSquare, Plus, Brain, ArrowUpRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import { CheckSquare, Plus, Brain, ChevronRight } from 'lucide-react';
 
 export const Tasks: React.FC = () => {
   const queryClient = useQueryClient();
@@ -20,7 +20,7 @@ export const Tasks: React.FC = () => {
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState<'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'>('MEDIUM');
   const [points, setPoints] = useState(1);
-  const [sprint, setSprint] = useState('Sprint 1');
+  const [sprint] = useState('Sprint 1');
   const [showForm, setShowForm] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 

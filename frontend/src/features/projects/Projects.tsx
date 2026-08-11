@@ -5,12 +5,12 @@
 
 import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import projectsApi, { ProjectData } from '../../api/projects.api';
+import projectsApi from '../../api/projects.api';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { Spinner } from '../../components/ui/Spinner';
-import { FolderGit, Plus, ExternalLink, Trash2, GitBranch, Layers } from 'lucide-react';
+import { FolderGit, Plus, Trash2, GitBranch, Layers } from 'lucide-react';
 
 export const Projects: React.FC = () => {
   const queryClient = useQueryClient();

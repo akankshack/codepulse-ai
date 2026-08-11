@@ -10,7 +10,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Ca
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { Spinner } from '../../components/ui/Spinner';
-import { Clock, Plus, Terminal, TerminalSquare, GitCommit } from 'lucide-react';
+import { Clock, Plus, TerminalSquare, GitCommit } from 'lucide-react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
 export const CodingSessions: React.FC = () => {
